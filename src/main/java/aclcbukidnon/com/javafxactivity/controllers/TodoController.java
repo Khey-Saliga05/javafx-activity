@@ -11,35 +11,34 @@ public class TodoController {
     private ListView<String> todoList;
 
     @FXML
-    private Button deleteButton; // Make sure to connect this to your FXML
+    private Button deleteButton;
 
     private ObservableList<String> todoItems;
 
     @FXML
     public void initialize() {
-        // Initialize the ObservableList
+
         todoItems = FXCollections.observableArrayList();
 
-        // Optionally add a sample item to start with
+
         todoItems.add("Remove Me");
 
-        // Set the ObservableList to the ListView
+
         todoList.setItems(todoItems);
 
-        // Set selection mode to SINGLE to allow only one item to be selected
+
         todoList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        // Listener to handle item click events
+
         todoList.getSelectionModel().selectedItemProperty().addListener(
                 (obs, oldVal, newVal) -> handleSelectionChange(newVal)
         );
     }
 
     private void handleSelectionChange(String selectedItem) {
-        // Enable/Disable Delete button based on selection
-        boolean isItemSelected = selectedItem != null;
-        deleteButton.setDisable(!isItemSelected); // Update delete button enablement
 
+        boolean isItemSelected = selectedItem != null;
+        deleteButton.setDisable(!isItemSelected);
         if (isItemSelected) {
             onTodoListItemClick(selectedItem);
         }
@@ -89,7 +88,7 @@ public class TodoController {
 
         confirm.showAndWait().ifPresent(result -> {
             if (result == ButtonType.OK) {
-                todoItems.remove(selectedItem); // Remove the selected item
+                todoItems.remove(selectedItem);
             }
         });
     }
@@ -104,6 +103,19 @@ public class TodoController {
 
     @FXML
     protected void onListEdit() {
-        // Placeholder method for any future functionality (e.g., bulk edit or advanced options)
+        String selectedItem = todoList.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            String updatedValue = showTextInputDialog(selectedItem, "Edit Todo", "Edit your selected todo item:");
+            if (updatedValue != null && !updatedValue.isEmpty()) {
+                int index = todoItems.indexOf(selectedItem);
+                if (index >= 0) {
+                    todoItems.set(index, updatedValue);
+                }
+            }
+        } else {
+            showWarningDialog("No Selection", "No Todo Selected", "Please select a todo item to edit.");
+        }
     }
-}
+
+    }
+
