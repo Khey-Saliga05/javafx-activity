@@ -4,24 +4,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox
-        fx:controller="aclcbukidnon.com.javafxactivity.controllers.CounterController"
-        alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button mnemonicParsing="false" prefHeight="156.0" prefWidth="118.0" style="-fx-background-color: #0f62fe;" text="-" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-      <Label text="0">
-         <font>
-            <Font size="78.0" />
-         </font>
-      </Label>
-      <Button layoutX="251.0" layoutY="132.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="118.0" style="-fx-background-color: #0f62fe;" text="+" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-   </children>
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="30.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aclcbukidnon.com.javafxactivity.controllers.CounterController">
+   <Button fx:id="btnDecrement" mnemonicParsing="false" onAction="#decrement" prefHeight="156.0" prefWidth="118.0" style="-fx-background-color: #003366; -fx-background-radius: 15;" text="-" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="58.0" />
+      </font>
+   </Button>
+   <Label fx:id="lblCounter" alignment="CENTER" contentDisplay="CENTER" prefHeight="154.0" prefWidth="116.0" text="0">
+      <font>
+         <Font name="Verdana" size="78.0" />
+      </font>
+   </Label>
+   <Button fx:id="btnIncrement" mnemonicParsing="false" onAction="#increment" prefHeight="156.0" prefWidth="118.0" style="-fx-background-color: #003366; -fx-background-radius: 15;" text="+" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="58.0" />
+      </font>
+   </Button>
 </HBox>
