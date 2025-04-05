@@ -28,19 +28,21 @@ public class SplashScreenController {
 
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         var timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, e -> progressInitial.setProgress(0)),
-                new KeyFrame(Duration.millis(200), e -> progressInitial.setProgress(0.1)),
-                new KeyFrame(Duration.millis(350), e -> progressInitial.setProgress(0.3)),
-                new KeyFrame(Duration.millis(400), e -> progressInitial.setProgress(0.5)),
-                new KeyFrame(Duration.millis(550), e -> progressInitial.setProgress(0.7)),
-                new KeyFrame(Duration.millis(600), e -> progressInitial.setProgress(0.9)),
-                new KeyFrame(Duration.millis(1050), e -> progressInitial.setProgress(1.0))
+                new KeyFrame(Duration.millis(300), e -> progressInitial.setProgress(0.05)), // Slow start
+                new KeyFrame(Duration.millis(600), e -> progressInitial.setProgress(0.2)),  // Gradual rise
+                new KeyFrame(Duration.millis(750), e -> progressInitial.setProgress(0.5)),  // Speed up
+                new KeyFrame(Duration.millis(900), e -> progressInitial.setProgress(0.8)),  // Faster!
+                new KeyFrame(Duration.millis(1100), e -> progressInitial.setProgress(1.1)), // Overshoot
+                new KeyFrame(Duration.millis(1250), e -> progressInitial.setProgress(1.0))  // Settle back
         );
+
         timeline.play();
         timeline.setOnFinished(_ -> onCompleted());
     }
+
 
     public void onCompleted () {
         var dashboardFxml = new FXMLLoader(Main.class.getResource("dashboard-view.fxml"));

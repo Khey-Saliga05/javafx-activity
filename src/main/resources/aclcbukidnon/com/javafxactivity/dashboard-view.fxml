@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aclcbukidnon.com.javafxactivity.controllers.DashboardController">
+<BorderPane fx:id="rootPane" minHeight="700.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aclcbukidnon.com.javafxactivity.controllers.DashboardController">
    <left>
-      <VBox prefHeight="400.0" prefWidth="187.0" style="-fx-background-color: #161616;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="232.0" style="-fx-background-color: #003366;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCounterClick" prefHeight="60.0" prefWidth="1000000.0" style="-fx-background-color: #0f62fe;" text="Counter" textFill="WHITE">
+            <Button contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onCounterClick" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #bf9b30; -fx-background-radius: 10;" text="Counter" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Verdana" size="26.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onTrafficLightClick" prefHeight="60.0" prefWidth="1000000.0" style="-fx-background-color: #0f62fe;" text="Traffic Light" textFill="WHITE">
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#onTrafficLightClick" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #bf9b30; -fx-background-radius: 10;" text="Traffic Light" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Button>
-            <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#onCalculatorClick" prefHeight="60.0" prefWidth="1000000.0" style="-fx-background-color: #0f62fe;" text="Calculator" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Verdana" size="26.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin></Button>
+            <Button contentDisplay="CENTER" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#onCalculatorClick" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #bf9b30; -fx-background-radius: 10;" text="Calculator" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
             </Button>
-            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#onTodoClick" prefHeight="60.0" prefWidth="1000000.0" style="-fx-background-color: #0f62fe;" text="Todo" textFill="WHITE">
+            <Button contentDisplay="CENTER" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#onTodoClick" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #bf9b30; -fx-background-radius: 10;" text="Todo" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Verdana" size="26.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>
