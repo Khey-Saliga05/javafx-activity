@@ -20,7 +20,6 @@ public class TrafficLightController {
 
     private int currentLight = 0;
 
-    private final DropShadow glowEffect = new DropShadow(40, Color.WHITE); // Reused glow
 
     public void initialize() {
         System.out.println("Red Light: " + redLight);
@@ -71,7 +70,6 @@ public class TrafficLightController {
 
     private void setActiveLight(Circle light, Color color) {
         light.setFill(color);
-        glowEffect.setColor(color);
-        light.setEffect(glowEffect);
+
     }
 }
